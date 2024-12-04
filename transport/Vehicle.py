@@ -1,6 +1,7 @@
+import random
 class Vehicle():
     def __init__(self, capacity, current_load=0):
-        self.vehicle_id = "123"
+        self.vehicle_id = str(random.randint(1000, 100000))
         try:
             capacity = int(capacity)
         except ValueError:
