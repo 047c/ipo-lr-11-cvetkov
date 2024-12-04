@@ -55,8 +55,11 @@ while Status:
         is_vip = True if is_vip == "1" else False
         try:
             cargo = int(cargo)
-            all_clients.append(transport.Client(name, cargo, is_vip))
-            print("Новый клиент был успешно создан!")
+            if cargo >= 0:
+                all_clients.append(transport.Client(name, cargo, is_vip))
+                print("Новый клиент был успешно создан!")
+            else:
+                print("Введите корректное значение веса груза нового клиента!")
         except:
             print("Введите корректное значение веса груза нового клиента!")
     elif input_data == 2:
@@ -76,8 +79,11 @@ while Status:
             is_refrigerated = True if is_refrigerated == "1" else False
             try:
                 capacity = int(capacity)
-                all_vehicles.append(transport.Van(capacity, is_refrigerated))
-                print("Грузовик создан!")
+                if capacity >= 0:
+                    all_vehicles.append(transport.Van(capacity, is_refrigerated))
+                    print("Грузовик создан!")
+                else:
+                    print("Введите корректное значение грузоподъёмности!")
             except:
                 print("Введите корректное значение грузоподъёмности!")
         elif input_data == 2:
@@ -85,8 +91,11 @@ while Status:
             name = input("Введите название судна: ")
             try:
                 capacity = int(capacity)
-                all_vehicles.append(transport.Ship(capacity, name))
-                print("Лодка создана!")
+                if capacity >= 0:
+                    all_vehicles.append(transport.Ship(capacity, name))
+                    print("Лодка создана!")
+                else:
+                    print("Введите корректное значение грузоподъёмности!")                    
             except ValueError:
                 print("Введите корректное значение грузоподъёмности!")
         elif input_data == 3:
