@@ -42,7 +42,4 @@ class TransportCompany():
                     vehicle.clients_list.append(self_client)
                     success.append(self_client)
                     break
-        print("Груз успешно оптимизирован и распределен для следующих клиентов компании:", end=" ")
-        for clients in success:
-            print(f"{clients.name}", end=" ")
-        print()
+        return success

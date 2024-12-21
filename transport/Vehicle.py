@@ -23,5 +23,5 @@ class Vehicle():
         else:
             self.current_load = new_weight
             self.clients_list.append(client)
-    def str(self):
+    def __str__(self):
         return f"ID транспорта: {self.vehicle_id}\n Грузоподъемность транспорта: {self.capacity}\n Загружено: {self.current_load}"
